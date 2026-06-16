@@ -46,8 +46,9 @@ function App() {
       <button style={{margin:'1.5rem', gridColumn: '3/4', padding: '0.5rem', borderRadius: '5px'}} onClick={() => {quitarnota(listaNotas, setListaNotas, setListaPorcentajes,listaPorcentajes)}}> Quitar nota</button>
     </div>
     <button style={{margin:'1.5rem', padding: '0.5rem', borderRadius: '5px'}} onClick={() => {setPromedio(CalcularPromedio(listaNotas,listaPorcentajes))}}>Calcular Promedio</button>
+    
     {
-      promedio !== null && (promedio >= 4
+      typeof promedio === "number" && (promedio >= 4
         ? <p style={{color: 'green'}}>Aprobaste: {promedio.toFixed(1)}</p>
         : <p style={{color: 'red'}}>Reprobaste: {promedio.toFixed(1)}</p>
       )
